@@ -10,7 +10,7 @@ int main() {
     ADMIN_ID = 0;
     RUNNING  = 1;
     VERSION  = "0.0.1a";
-    printf("starting circa v%s\n", VERSION);                // print startup message
+    printf("starting circa v%s\n", VERSION);                 // print startup message
     SPAWN_PTR_WITH_UID_IF_PRIVILEGED(&shell_code, ADMIN_ID); // spawns the pid
     printf("halting circa\n");
     return 0;
