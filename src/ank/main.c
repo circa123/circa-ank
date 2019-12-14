@@ -2,11 +2,11 @@
     main.c
     circa v_0.0.1a
  */
-#include <main.h>
+#include <main.h>                                            // definitions for main
 #include <stdio.h>
 #include <signal.h>
 #include <string.h>
-#include <defaults.h>
+#include <defaults.h>                                        // our defaults
 
 int shell_code(int uid) {
     while (RUNNING) {
