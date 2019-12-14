@@ -75,6 +75,15 @@ int main(int argc, char* argv[]) {
              */
         }
 
+        else if (STRING_EQUAL_TO_STRING(argv[i], "-l", 2)) {
+            /*
+              -l
+              long list
+              WORKING ON IT!!!
+              stub
+             */
+        }
+
         else {
             DIR_SPEC = 1;                                                  // if not an argument, set dir to yes
         };
