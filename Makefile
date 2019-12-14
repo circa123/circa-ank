@@ -27,7 +27,7 @@ utils:
 	gcc -o bin/utils/head src/utils/head.c src/ank/syscall.c -I src/headers
 	gcc -o bin/utils/ln src/utils/ln.c
 	gcc -o bin/utils/ls src/utils/ls.c src/ank/syscall.c -I src/headers
-	gcc -o bin/utils/mkdir src/utils/mkdir.c
+	gcc -o bin/utils/mkdir src/utils/mkdir.c src/ank/syscall.c -I src/headers
 	gcc -o bin/utils/mv src/utils/mv.c
 	gcc -o bin/utils/rm src/utils/rm.c src/ank/syscall.c -I src/headers
 	gcc -o bin/utils/tail src/utils/tail.c src/ank/syscall.c -I src/headers
