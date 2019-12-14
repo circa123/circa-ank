@@ -1,3 +1,9 @@
+# make file
+# make / make ALL for making everything (except fs)
+# make init to compile init
+# make utils to make utilites
+# make fs to make fs
+
 ALL:
 	echo compiling all
 	rm -rf bin
