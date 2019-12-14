@@ -78,8 +78,8 @@ int shell(char input[1024]) {
     }
 
     /*
-     fuck ed
-     nano all the way bitch
+     f*** ed
+     nano all the way b****
      */
 
     else if (STRING_EQUAL_TO_STRING(args[0], "id", 2)) {
