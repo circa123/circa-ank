@@ -166,7 +166,7 @@ int shell(char input[1024]) {
             printf("multi user\n");                                            // no multi user implemented, at least in the same launch process
             /*
              note to self
-             might implement multi user and shit with an init binary
+             might implement multi user and s*** with an init binary
              kinda make a micro kernel inside of a real kernel
              */
         }
