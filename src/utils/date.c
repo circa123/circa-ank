@@ -10,7 +10,7 @@
 
 int main() {
     /*
-     basic ass date command
+     basic *ss date command
      */
     time_t TIME = time(NULL);                                              // time_t, gives us the time
     struct tm tm = *localtime(&TIME);                                      // get time struct for date command
