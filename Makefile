@@ -19,6 +19,7 @@ init:
 
 utils:
 	echo compiling utils
+	gcc -o bin/utils/basename src/utils/basename.c
 	gcc -o bin/utils/cat src/utils/cat.c
 	gcc -o bin/utils/cp src/utils/cp.c
 	gcc -o bin/utils/chmod src/utils/chmod.c
