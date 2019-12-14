@@ -1,6 +1,6 @@
 /*
  syscall.h
- fuck posix
+ f*** posix
  circa v0.0.1a
  */
 
