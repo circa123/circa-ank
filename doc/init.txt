@@ -1,0 +1,11 @@
+INIT.C - circa / ank v0.0.1a
+
+VARIABLES
+int CHILD = 0;                      // just to make code a little nicer
+int status;                         // for waitpid later on
+int pid = fork();                   // forks program to use execv later on
+
+BRANCHES
+IF CHILD:
+argv_list is just blank for execv
+execv("binaries/circa", argv_list); // execute shell
