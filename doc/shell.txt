@@ -1,4 +1,4 @@
-SHELL - circa / ank 0.0.1a
+SHELL - circa 0.0.1a
 
 shell usage, and commands
 
@@ -82,4 +82,3 @@ prints yes forever
 
 suom
 print if single user or multi user
-
