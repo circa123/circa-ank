@@ -55,7 +55,25 @@ int shell(char input[1024]) {
         cnt++;                                                                 // up counter
     }
 
-    if (STRING_EQUAL_TO_STRING("cd", args[0], 2)) {
+    if (STRING_EQUAL_TO_STRING(args[0], "basename", 8)) {
+        if (cnt == 1) {
+            printf("basename: usage: basename [PATH]\n");                      // no args specified.
+            return 1;
+        }
+        token = strtok(args[1], "/");                                          // get token for args[1]
+        char new_backup[256];                                                  // backup for token
+        while (token != NULL) {
+            for (int i = 0; i < 256; i++) {
+                new_backup[i] = 0;                                             // clear backup token
+            }
+            strncpy(new_backup, token, 256);                                   // copy token into new_backup
+            token = strtok(NULL, "/");                                         // get next token
+        }
+        printf("%s\n", new_backup);                                            // we done, print that stuff
+        return 0;
+    }
+
+    else if (STRING_EQUAL_TO_STRING("cd", args[0], 2)) {
         if (chdir(args[1]) == 0) {                                             // success
             return 0;                                                          // success
         }
