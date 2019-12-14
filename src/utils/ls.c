@@ -25,6 +25,13 @@ int main(int argc, char* argv[]) {
             ARG_A = 1;                                                     // if -a enabled, set that
         }
 
+        if (STRING_EQUAL_TO_STRING(argv[i], "-A", 2)) {
+            /*
+              run if -a enabled
+             */
+            ARG_A = 2;                                                     // if -A enabled, set to 2
+        }
+
         if (argv[i][0] != '-') {
             DIR_SPEC = 1;                                                  // if not an argument, set dir to yes
         }
@@ -40,7 +47,15 @@ int main(int argc, char* argv[]) {
     if (DP != NULL) {                                                      // if not empty and directory exists
         while ((EP = readdir(DP)) != NULL) {                               // set EP to next file to read, and check if done
             if (EP->d_name[0] == '.') {
-                if (ARG_A) {}                                              // if -a, do nothing
+                if (ARG_A == 1) {                                          // if -a, do nothing
+                    if (STRING_EQUAL_TO_STRING(EP->d_name, ".", 1) && EP->d_name[1] == '\0') {
+                        continue;                                          // if ., and using -a skip
+                    }
+                    else if (STRING_EQUAL_TO_STRING(EP->d_name, "..", 2) && EP->d_name[2] == '\0') {
+                        continue;                                          // if .., and using -a skip
+                    }
+                }
+                else if (ARG_A == 2) {}                                    // if -A, nothing will change it
                 else {
                     continue;                                              // if not, continue
                 }
