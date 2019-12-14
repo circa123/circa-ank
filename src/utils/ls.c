@@ -25,16 +25,23 @@ int main(int argc, char* argv[]) {
             ARG_A = 1;                                                     // if -a enabled, set that
         }
 
-        if (STRING_EQUAL_TO_STRING(argv[i], "-A", 2)) {
+        else if (STRING_EQUAL_TO_STRING(argv[i], "-A", 2)) {
             /*
               run if -a enabled
              */
             ARG_A = 2;                                                     // if -A enabled, set to 2
         }
 
-        if (argv[i][0] != '-') {
-            DIR_SPEC = 1;                                                  // if not an argument, set dir to yes
+        else if (STRING_EQUAL_TO_STRING(argv[i], "-b", 2) || STRING_EQUAL_TO_STRING(argv[i], "--escape", 8)) {
+            /*
+              if -b or --escape, print non graphic as octal escape
+              stub
+             */
         }
+
+        else (argv[i][0] != '-') {
+            DIR_SPEC = 1;                                                  // if not an argument, set dir to yes
+        };
     }
     DIR *DP;                                                               // dir object, for listing files inside of specific directory.
     struct dirent *EP;                                                     // dirent struct for actually getting the name of the files in the directory while listing them. my god i'm long winded
