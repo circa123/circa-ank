@@ -1,6 +1,6 @@
 /*
-    main.h
-    circa v0.0.1a
+  main.h
+  circa v0.0.1.1a
  */
 
 char        INPUT[1024];                      // input array

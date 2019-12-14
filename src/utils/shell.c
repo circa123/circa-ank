@@ -1,8 +1,7 @@
 /*
- shell.c
- f*** posix
- also, piping not a thing yet. sry
- circa v0.0.1a
+  shell.c
+  piping not a thing yet. sry
+  circa v0.0.1.1a
  */
 
 #include <ftw.h>         // for rm

@@ -1,6 +1,6 @@
 /*
- circa utilites
- mv
+  mv
+  circa v0.0.1.1a
  */
 
 #include <stdio.h>
@@ -17,7 +17,7 @@ int main(int argc, char* argv[]) {
     int ctr;                                                               // counter for reading
     char chr;                                                              // char for reading
     char FILE_READ[1024];                                                  // read buffer
-    
+
     /*
      debugging
     for (int i = 0; i < strlen(args[2]); i++) {

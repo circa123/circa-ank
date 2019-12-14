@@ -1,7 +1,6 @@
 /*
- circa
- f*** posix
- syscall.c
+  syscall.c
+  ank v0.0.1.1a
  */
 
 #include <ftw.h>         // for rm

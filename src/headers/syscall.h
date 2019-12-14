@@ -1,7 +1,6 @@
 /*
- syscall.h
- f*** posix
- circa v0.0.1a
+  syscall.h
+  ank v0.0.1.1a
  */
 
 int  UNLINK_FILES(const char *F_PATH, const struct stat *STAT_STRUCT, int TYPE, struct FTW *FTW_STRUCT); // unlinks files

@@ -1,6 +1,6 @@
 /*
- circa utils
- head
+  head
+  circa v0.0.1.1a
  */
 
 #include <stdio.h>
@@ -27,20 +27,20 @@ int main(int argc, char* argv[]) {
      */
     FILE *fptr;                                                            // file pointer
     char chr;                                                              // char for reading
-    
+
     fptr = fopen(argv[counter], "r");                                      // open file, for reading
     if (fptr == NULL) {
         printf("error opening file :(\n");                                 // lol rip
         return 1;                                                          // fail
     }
-    
+
     chr = fgetc(fptr);                                                     // get next character
     while ((chr != EOF) && (another_counter < head_int)) {                 // read until file over or read all of the head bytes, whichever comes first
         printf("%c", chr);                                                 // print character
         chr = fgetc(fptr);                                                 // get next character
         another_counter++;                                                 // up counter
     }
-    
+
     fclose(fptr);                                                          // close file
     return 0;                                                              // success
 }

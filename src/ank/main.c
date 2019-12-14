@@ -1,6 +1,7 @@
 /*
-    main.c
-    circa v_0.0.1a
+  ank v0.0.1.1a
+  main.c
+  compiles to cfs/binaries/circa
  */
 #include <main.h>                                            // definitions for main
 #include <stdio.h>

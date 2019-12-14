@@ -1,5 +1,6 @@
 /*
- circa utils v0.0.1a
+  cp.c
+  circa v0.0.1.1a
  */
 
 #include <stdio.h>
@@ -10,11 +11,11 @@ int main(int argc, char* argv[]) {
      from cat, but jankier :D
      also apparently ends at nulls
      */
-    
+
     FILE *fptr;                                                            // file pointer
     FILE *sndptr;                                                          // second file pointer, for writing
     char chr;                                                              // char for reading
-    
+
     /*
      debugging
     for (int i = 0; i < strlen(args[2]); i++) {
