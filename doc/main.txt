@@ -19,10 +19,10 @@ int main() {
 
 the dummy function is an empty, void function
 walkthrough:
-signal(SIGINT, dummy);             - make ctrl c do nothing
-signal(SIGTSTP, dummy);            - make ctrl z do nothing
+signal(SIGINT, dummy);                                       // make ctrl c do nothing
+signal(SIGTSTP, dummy);                                      // make ctrl z do nothing
 lines 4 - 8, initialization
 print startup message with version
-SPAWN_PTR_WITH_UID_IF_PRIVILEGED   - executes a pointer to an int function, if uid equals admin uid
+SPAWN_PTR_WITH_UID_IF_PRIVILEGED                             // executes a pointer to an int function, if uid equals admin uid
 halt message
 return 0
