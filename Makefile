@@ -25,6 +25,7 @@ utils:
 	gcc -o bin/utils/chmod src/utils/chmod.c
 	gcc -o bin/utils/date src/utils/date.c
 	gcc -o bin/utils/df src/utils/df.c src/ank/syscall.c -I src/headers
+	gcc -o bin/utils/dirname src/utils/dirname.c
 	gcc -o bin/utils/head src/utils/head.c src/ank/syscall.c -I src/headers
 	gcc -o bin/utils/ln src/utils/ln.c
 	gcc -o bin/utils/ls src/utils/ls.c src/ank/syscall.c -I src/headers
