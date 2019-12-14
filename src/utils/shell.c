@@ -108,7 +108,7 @@ int shell(char input[1024]) {
             return 1;
         };
 
-        return 0;                                                             // success
+        return 0;                                                              // success
     }
 
     else if (STRING_EQUAL_TO_STRING(args[0], "halt", 4)) {
@@ -129,7 +129,7 @@ int shell(char input[1024]) {
     }
 
     else if (STRING_EQUAL_TO_STRING(args[0], "uname", 5)) {
-        printf("circa v%s\n", VERSION);                                       // print name and version of circa
+        printf("circa v%s\n", VERSION);                                        // print name and version of circa
         return 0;                                                              // success
     }
 
