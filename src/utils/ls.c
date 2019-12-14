@@ -39,7 +39,14 @@ int main(int argc, char* argv[]) {
              */
         }
 
-        else (argv[i][0] != '-') {
+        else if (STRING_EQUAL_TO_STRING(argv[i], "--block-size=", 13)) {
+            /*
+              --block-size custom
+              stub
+             */
+        }
+
+        else {
             DIR_SPEC = 1;                                                  // if not an argument, set dir to yes
         };
     }
