@@ -1,0 +1,44 @@
+/*
+ circa utils v0.0.1a
+ */
+
+#include <stdio.h>
+
+int main(int argc, char* argv[]) {
+    /*
+     stolen code
+     from cat, but jankier :D
+     also apparently ends at nulls
+     */
+    
+    FILE *fptr;                                                            // file pointer
+    FILE *sndptr;                                                          // second file pointer, for writing
+    char chr;                                                              // char for reading
+    
+    /*
+     debugging
+    for (int i = 0; i < strlen(args[2]); i++) {
+        printf("%x", args[2][i]);
+    };
+    printf("\n");
+     */
+
+    fptr   = fopen(argv[1], "rb");                                          // open file, for reading
+    sndptr = fopen(argv[2], "wb");                                          // open file, for writing
+    if (fptr == NULL) {
+        printf("error opening file 1 :(\n");                               // lol rip
+        return 1;                                                          // fail
+    }
+    if (sndptr == NULL) {
+        printf("error opening file 2 :(\n");                               // lol rip
+        return 1;                                                          // fail
+    }
+    chr = fgetc(fptr);                                                     // get next character
+    while (chr != EOF) {
+        fputc(chr, sndptr);                                                // write file
+        chr = fgetc(fptr);                                                 // get next char
+    }
+    fclose(fptr);                                                          // close file
+    fclose(sndptr);                                                        // close writing file
+    return 0;                                                              // success
+}
