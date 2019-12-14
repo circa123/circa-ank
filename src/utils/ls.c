@@ -46,6 +46,35 @@ int main(int argc, char* argv[]) {
              */
         }
 
+        else if (STRING_EQUAL_TO_STRING(argv[i], "-c", 2)) {
+            /*
+              sort by modification time
+              stub
+             */
+        }
+
+        else if (STRING_EQUAL_TO_STRING(argv[i], "-C", 2)) {
+            /*
+              list entries with columns
+              stub
+             */
+        }
+
+        else if (STRING_EQUAL_TO_STRING(argv[i], "--color", 7)) {
+            /*
+              use color for listing files
+              stub
+             */
+        }
+
+        else if (STRING_EQUAL_TO_STRING(argv[i], "-h", 2)) {
+            /*
+              -h, for human readable sizes
+              WORKING ON IT!!!
+              stub
+             */
+        }
+
         else {
             DIR_SPEC = 1;                                                  // if not an argument, set dir to yes
         };
