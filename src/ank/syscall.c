@@ -1,6 +1,6 @@
 /*
  circa
- fuck posix
+ f*** posix
  syscall.c
  */
 
@@ -10,7 +10,7 @@
 #include <dirent.h>      // for listing dirs
 #include <locale.h>      // localization
 #include <stdlib.h>      // some other stuff
-#include <unistd.h>      // for symlinks and shit
+#include <unistd.h>      // for symlinks and s***
 #include <langinfo.h>    // language info
 #include <sys/statvfs.h> // filesystems
 
