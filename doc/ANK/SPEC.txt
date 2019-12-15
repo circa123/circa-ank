@@ -1,4 +1,4 @@
-ANK SPECIFICATION
+ANK SPECIFICATION v0
 The ANK specification are a collection of guidelines / suggestions for creating a toolkit for any OS.
 
 HEADERS
@@ -35,3 +35,33 @@ int   REMOVE_DIR(char *PATH) - removes directory
 int   STRING_EQUAL_TO_STRING(char INPUT[], char COMPARE_STRING, int LEN) - returns 1 is strings are equal up to LEN, 0 if not
 char* INT_TO_FORMATTED_STRING(long long integer) - takes integer and turns it into formatted amount of bytes
 int   SPAWN_PTR_WITH_UID_IF_PRIVILEGED(int (*ptr)(uid), uid) - if uid == ADMIN_ID, run *ptr
+
+C PROGRAMS
+NOTES:
+the programs are less focused on the technical aspects, and more focused on general aspects, such as the theory behind it, or the boot sequence, rather than discussing exact source(s) to achieve the desired result. maybe gen2?
+
+init.c
+MUST:
+be able to print a startup message
+execute shell
+RECOMMENDED, BUT OPTIONAL:
+check if shell binary exists before executing and if not, print error such as "error: shell binary not found. please check for the shell binary, or contact your system administrator immediately."
+
+main.c
+MUST:
+set cfs and cfs_bin for PROGRAMS
+set SUOM env VARIABLES
+set ADMIN_ID
+set VERSION
+spawn shell
+
+syscall.c
+NOTE:
+SEE syscall.h IN HEADERS SECTION FOR MORE DETAIL
+MUST:
+UNLINK_FILES
+REMOVE_DIR
+STRING_EQUAL_TO_STRING
+INT_TO_FORMATTED_STRING
+SPAWN_PTR_WITH_UID_IF_PRIVILEGED
+UNAME
