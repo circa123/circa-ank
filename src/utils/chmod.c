@@ -14,6 +14,6 @@ int main(int argc, char *argv[]) {
         return argc;                                          // return argument count
     }
     else {
-        return chmod(argv[1], strtol(argv[2], NULL, 8));      // otherwise, chmod first argument [file], with permissions [argv[2]]
+        return chmod(argv[1], strtol(argv[2], NULL, 8));      // otherwise, chmod first argument [argv[1]], with permissions [argv[2]]
     };
 }
