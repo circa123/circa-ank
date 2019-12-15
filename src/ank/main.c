@@ -30,9 +30,6 @@ int shell_code(int uid) {
         if (ERROR) {                                         // if error returned
             printf("error with shell command\n", ERROR);     // print error message
         }
-        else if (ERROR == -255) {
-            abort();
-        }
     };
 }
 
@@ -49,6 +46,5 @@ int main() {
     VERSION  = "0.0.1a";                                     // version of circa
 	printf("starting circa v%s\n", VERSION);                 // print startup message
     SPAWN_PTR_WITH_UID_IF_PRIVILEGED(&shell_code, ADMIN_ID); // spawn shell_code, the code for FEC in circa
-	printf("halting circa\n");
 	return 0;
 };

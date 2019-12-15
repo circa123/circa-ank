@@ -1,7 +1,7 @@
 /*
- ank v0.0.1.1a
- init.c
- compiles to cfs/init
+  ank v0.0.1.1a
+  init.c
+  compiles to cfs/init
  */
 
 #include <stdlib.h>

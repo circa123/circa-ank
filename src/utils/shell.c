@@ -55,7 +55,7 @@ int shell(char input[1024]) {
         cnt++;                                                                 // up counter
     }
 
-    else if (STRING_EQUAL_TO_STRING("cd", args[0], 2)) {
+    if (STRING_EQUAL_TO_STRING("cd", args[0], 2)) {
         if (chdir(args[1]) == 0) {                                             // success
             return 0;                                                          // success
         }
@@ -111,8 +111,8 @@ int shell(char input[1024]) {
     }
 
     else if (STRING_EQUAL_TO_STRING(args[0], "halt", 4)) {
-        exit(-255);
-        return -255;                                                           // success
+        RUNNING = 0;
+        return 0;
     }
 
     else if (STRING_EQUAL_TO_STRING(args[0], "sleep", 5)) {
