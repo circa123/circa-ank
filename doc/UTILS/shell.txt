@@ -2,62 +2,26 @@ SHELL - circa 0.0.1a
 
 shell usage, and commands
 
-chmod [file] [mode]
-change file's mode to mode.
-
-cat [file]
-read file
-
 cd [directory]
 change pwd to directory
-
-cp [file] [file2]
-copy file to file2
-
-date
-print date
-
-df [PATH]
-print free space on [PATH]
 
 echo [STRING]
 print string
 
-head -c [bytes] [path]
-read first [bytes] bytes of [path]
-
 id
 print uid and gid
-
-ln [real] [fake]
-make symlink called fake that points to real
 
 logname
 print login name
 
-ls {dir}
-print all files in dir, if no dir, .
-
-mkdir [dir]
-create dir [dir]
-
-mv [f1] [f2]
-move f1 to f2
-
 pwd
 print pwd
-
-rm [file/dir]
-remove file/dir
 
 halt
 stop circa / ank
 
 sleep n
 sleep for n seconds
-
-tail -c [n] [file]
-read last n bytes of file
 
 tty
 prints "god" as it's in single user
@@ -73,12 +37,6 @@ again, circa
 
 whoami
 again again, circa
-
-xxd [file]
-hexdump file
-
-yes
-prints yes forever
 
 suom
 print if single user or multi user
