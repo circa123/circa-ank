@@ -24,7 +24,7 @@ int main(int argc, char* argv[]) {
      stolen from head
      */
     for (int i = 1; i < argc; i++) {                                       // for each argument in the array
-        if (STRING_EQUAL_TO_STRING(argv[i], "-c", 2)) {                                     // if argument is -c
+        if (STRING_EQUAL_TO_STRING(argv[i], "-c", 2)) {                    // if argument is -c
             tail_int = atoi(argv[i + 1]);                                  // set amount to read to next argument
             counter = i + 2;                                               // counter now equals the filename's place in the args
             break;                                                         // success
