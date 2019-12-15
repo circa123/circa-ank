@@ -11,7 +11,7 @@ int main(){
     /*
      stole fork + exec code from shell.c
      */
-    printf("{circa} init\n");
+    printf("{circa} init\nTHIS PROGRAM COMES WITH ABSOLUTELY NO WARRANTY, SEE LICENSE TEXT FOR DETAILS. \n");
     int CHILD = 0;
     int status;                                                            // for waitpid
     int pid = fork();                                                      // fork
