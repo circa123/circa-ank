@@ -7,7 +7,7 @@
 
 int main(int argc, char* argv[]) {
     if (argc < 2) {
-        printf("cat: usage cat [FILE]\ne.g. cat example\n");
+        printf("cat: usage cat [FILE]\ne.g. cat example\nor cat example1 example2... etc\n");
     }
 
     else if (argc == 2) {
