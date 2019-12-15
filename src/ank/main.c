@@ -38,7 +38,7 @@ void dummy( int dummy ){return;};                            // dummy function, 
 int main() {
     cfs_bin[256]  = "/Users/jp/circa/cfs/binaries/";         // where the binaries are
     cfs[256]      = "/Users/jp/circa/cfs/";                  // where the cfs is
-    signal(SIGINT, dummy);                                   // skip the interrupt
+    signal(SIGINT, dummy);                                   // skip stop, ctrl+c
     signal(SIGTSTP, dummy);                                  // skip stop, ctrl+z
     SUOM    = 's';                                           // single user
     ADMIN_ID = 0;                                            // admin_id is 0, circa
