@@ -19,10 +19,17 @@ int main(int argc, char* argv[]) {
             return 1;                                                      // fail
         }
 
+        int size;                                                          // size of file
+        fseek(fptr, NULL, SEEK_END);                                       // go to end of file
+        size = ftell(fptr);                                                // check where we are and save
+        fseek(fptr, NULL, 0);                                              // go back to start
+
         chr = fgetc(fptr);                                                 // get next character
-        while (chr != EOF) {                                               // read until file over
-            printf("%c", chr);                                             // print character
-            chr = fgetc(fptr);                                             // get next character
+        int cnt = 0;                                                       // counter for file read
+        while (cnt < size) {                                               // read until file over
+            printf("%c", chr);
+            chr = fgetc(fptr);                                             // get next char
+            cnt++;                                                         // up counter
         }
 
         fclose(fptr);                                                      // close file
