@@ -3,6 +3,7 @@
 # make init to compile init
 # make utils to make utilites
 # make fs to make fs
+# make clean to clean up
 
 ALL:
 	echo compiling all
