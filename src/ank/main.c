@@ -10,7 +10,7 @@
 #include <defaults.h>                                        // our defaults
 
 int shell_code(int uid) {
-    while (RUNNING) {
+    while (RUNNING == 1) {
         if (getcwd(CWD, sizeof(CWD)) != NULL) {
             // success with getting cwd
         }
