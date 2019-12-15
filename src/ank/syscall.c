@@ -84,7 +84,7 @@ char* INT_TO_FORMATTED_STRING(long long integer) {
     return returnChar;                                                         // return char*
 }
 
-int SPAWN_PTR_WITH_UID_IF_PRIVILEGED(int (*ptr)(int uid), uid) {
+int SPAWN_PTR_WITH_UID_IF_PRIVILEGED(int (*ptr)(int uid), int uid) {
     /*
      spwuif
      if uid passed == 0, spawn it
