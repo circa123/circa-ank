@@ -24,10 +24,17 @@ int main(int argc, char* argv[]) {
         return 1;                                                          // fail
     }
 
+    int size;                                                              // size of file
+    fseek(fptr, NULL, SEEK_END);                                           // go to end of file
+    size = ftell(fptr);                                                    // check where we are and save
+    fseek(fptr, NULL, 0);                                                  // go back to start
+
     chr = fgetc(fptr);                                                     // get next character
-    while (1) {                                                            // read until file over
+    int cnt = 0;                                                           // counter for file read
+    while (cnt < size) {                                                   // read until file over
         printf("%0x", chr);                                                // print character in hex, padded
         chr = fgetc(fptr);                                                 // get next character
+        cnt++;                                                             // up counter
     }
 
     fclose(fptr);                                                          // close file
