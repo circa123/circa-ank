@@ -16,7 +16,7 @@ int shell_code(int uid) {
         }
 
         else {
-            printf("error with getting cwd, sry :P\n");      // error getting cwd
+            printf("error. could not get cwd\n");      // error getting cwd
         };
 
         for (int i = 0; i < 1024; i++) {
@@ -28,7 +28,7 @@ int shell_code(int uid) {
 
         ERROR = shell(INPUT);                                // runs shell command
         if (ERROR) {                                         // if error returned
-            printf("error with shell command\n", ERROR);     // print error message
+            printf("error: could not execute\n", ERROR);     // print error message
         }
     };
 }
@@ -36,8 +36,8 @@ int shell_code(int uid) {
 void dummy( int dummy ){return;};                            // dummy function, just returns
 
 int main() {
-    cfs_bin[256]  = "/Users/jp/circa/cfs/binaries/";         // where the binaries are
-    cfs[256]      = "/Users/jp/circa/cfs/";                  // where the cfs is
+    cfs_bin[256]  = "/Users/jp/circa/cfs/binaries/";         // where the binaries are, replace this to fit your needs
+    cfs[256]      = "/Users/jp/circa/cfs/";                  // where the cfs is,       replace this to fit your needs
     signal(SIGINT, dummy);                                   // skip stop, ctrl+c
     signal(SIGTSTP, dummy);                                  // skip stop, ctrl+z
     SUOM    = 's';                                           // single user
