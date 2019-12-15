@@ -98,3 +98,9 @@ int SPAWN_PTR_WITH_UID_IF_PRIVILEGED(int (*ptr)(int uid), uid) {
     }
     return 0;                                                                  // success!
 }
+
+char* UNAME() {
+    char* ret_val;                                                             // returned char*
+    sprintf(ret_val, "ank v%s", VERSION);                                      // format version
+    return ret_val;                                                            // return char*
+}
