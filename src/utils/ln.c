@@ -11,5 +11,5 @@ int main(int argc, char* argv[]) {
         return argc;
     }
     printf("\n");                                                              // print a newline.
-    return symlink(argv[1], argv[2]);                                          // create symlink called args[2] pointing to args[1]
+    return symlink(argv[1], argv[2]);                                          // create symlink called argv[2] pointing to argv[1]
 }
