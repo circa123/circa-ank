@@ -186,7 +186,7 @@ int shell(char input[1024]) {
             }
             int len = strlen(a0);
             for (int i = len; i < len + strlen(args[0]); i++) {
-                a0[i] = args[0][i - len]; // copy command after binaries
+                a0[i] = args[0][i - len];                                      // copy command after binaries
             }
             argv_list[cnt] = NULL;                                             // because exec
             execv(a0, argv_list);                                              // actually exec the binary
