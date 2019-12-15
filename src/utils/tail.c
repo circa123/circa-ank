@@ -35,12 +35,14 @@ int main(int argc, char* argv[]) {
         printf("error: could not open file. :(\n");                        // lol rip, fail. :(
         return 1;                                                          // fail
     }
-    fseek(fptr, 0, SEEK_END);
-    length = ftell(fptr);
-    fseek(fptr, length - tail_int, SEEK_SET);
-    while ((chr != EOF)) {                                                 // read until file is over
+    fseek(fptr, 0, SEEK_END);                                              // go to end
+    length = ftell(fptr);                                                  // get length
+    fseek(fptr, length - tail_int, SEEK_SET);                              // go to end of file - the integer for how much we are reading
+    int cnt = length - tail_int;
+    while (cnt < length) {                                                 // read until file is over
         printf("%c", chr);                                                 // print character
         chr = fgetc(fptr);                                                 // get next character
+        cnt++;                                                             // up counter
     }
     return 0;                                                              // success
 }
