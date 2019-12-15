@@ -1,6 +1,7 @@
 /*
-  syscall.c
   ank v0.0.1.1a
+  syscall.c
+  link in programs to get ANK syscalls
  */
 
 #include <ftw.h>         // for rm
