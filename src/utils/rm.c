@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) {
         printf("rm: usage: rm [FILE/DIR]\n");
     }
     struct stat PATH_STAT;                                                 // path stat struct
-    stat(argv[1], &PATH_STAT);                                             // stat the path specified by user in args[1]
+    stat(argv[1], &PATH_STAT);                                             // stat the path specified by user in argv[1]
     if (S_ISREG(PATH_STAT.st_mode)) {
         remove(argv[1]);                                                   // just remove if regular file
     }
