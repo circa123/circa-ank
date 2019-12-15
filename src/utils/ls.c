@@ -126,7 +126,7 @@ int main(int argc, char* argv[]) {
                         /*
                           if not
                          */
-                         printf("\\%o", EP->d_name[i]);                    // print character in octal
+                        printf("\\%o", EP->d_name[i]);                    // print character in octal
                     }
                 }
                 printf("\n");
