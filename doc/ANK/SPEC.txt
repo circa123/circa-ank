@@ -1,5 +1,7 @@
 ANK SPECIFICATION v0
 The ANK specification are a collection of guidelines / suggestions for creating a toolkit for any OS.
+ANK, inside of src/headers as well as src/ank, is meant to be a reference implementation, as well as the recommended implementation.
+Circa, is a collection of utilities, including our shell, and some of the UNIX and GNU Coreutils commands re-implemented.
 
 HEADERS
 
