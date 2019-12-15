@@ -172,14 +172,14 @@ int shell(char input[1024]) {
         }
         else {
             printf("Strangely, the SUOM environment variable is not correctly set, please check your kernel settings and try again. :)\n");
-        }
+        };
         return 0;
     }
 
     else {                                                                     // if not implemented directly in the shell, run this code
         int status;                                                            // for waitpid
         int pid = fork();                                                      // fork
-        if (pid == 0){                                                         // if child process, run this code
+        if (pid == 0) {                                                        // if child process, run this code
             char *argv_list[] = {""};                                          // initialize argv list for the execution with "", to pad the code
             char a0[128];                                                      // binary path
             strncpy(a0, cfs_bin, 128);                                         // patches
