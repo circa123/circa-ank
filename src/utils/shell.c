@@ -180,7 +180,8 @@ int shell(char input[1024]) {
         int pid = fork();                                                      // fork
         if (pid == 0){                                                         // if child process, run this code
             char *argv_list[] = {""};                                          // initialize argv list for the execution with "", to pad the code
-            char a0[128] = "/Users/jp/circa/cfs/binaries/";                    // binary path
+            char a0[128];                                                      // binary path
+            strncpy(a0, cfs_bin, 128);                                         // patches
             for (int i = 1; i < cnt; i++) {                                    // for each argument passed
                 argv_list[i] = args[i];                                        // add argument to end of argv_list
             }
