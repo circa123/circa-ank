@@ -46,6 +46,7 @@ int main(int argc, char* argv[]) {
         chr = fgetc(fptr);                                                 // get next char
         cnt++;                                                             // up counter
     }
+    
     fclose(fptr);                                                          // close file
     fclose(sndptr);                                                        // close writing file
     return 0;                                                              // success
