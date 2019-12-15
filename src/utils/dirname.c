@@ -1,3 +1,8 @@
+/*
+  dirname
+  circa v0.0.1.1a
+*/
+
 #include <stdio.h>
 #include <libgen.h>
 #include <string.h>
