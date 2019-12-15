@@ -22,7 +22,7 @@ Ok, so how do I build it?
 Just run 'make', then 'make fs'
 
 So how do I run it?
-Just run 'cfs/init'
+Just run 'cfs/init', inside of the CFS folder.
 
 ALSO
 a commit from ra1n is a commit from James, and vice versa
