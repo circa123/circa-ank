@@ -19,7 +19,23 @@ int main(){
         /*
         if child process
          */
-        char *argv_list[] = {"", NULL};                                    // initialize argv list for the execution with "", to pad the code
+        char CWD[256];
+        if (getcwd(CWD, sizeof(CWD)) != NULL) {
+            // success with getting cwd
+        }
+        else {
+            printf("error getting cwd. :(\n");
+            exit(0);
+        }
+        char BIN[256];                                                     // binary path
+        char BINS[256] = "binaries/";                                      // just an array with binaries/ in it
+        strncpy(BIN, CWD, 256);                                            // put cwd in bin
+        BIN[strlen(BIN)] = '/';                                            // for fix
+        int len = strlen(BIN);                                             // get len for loop
+        for (int i = len; i < len + strlen("binaries/"); i++) {
+            BIN[i] = BINS[i - len];                                        // chuck on bins to end of bin
+        }
+        char *argv_list[] = {"", BIN, CWD, NULL};                          // initialize argv list for the execution with "", to pad the code
         execv("binaries/circa", argv_list);                                // actually exec the binary
         exit(0);                                                           // exit
     }

@@ -35,9 +35,12 @@ int shell_code(int uid) {
 
 void dummy( int dummy ){return;};                            // dummy function, just returns
 
-int main() {
-    strncpy(cfs_bin, "/Users/jp/circa/cfs/binaries/", 256);  // where the binaries are, replace this to fit your needs
-    strncpy(cfs, "/Users/jp/circa/cfs/", 256);               // where the cfs is,       replace this to fit your needs
+int main(int argc, char* argv[]) {
+    if (argc < 3) {
+        printf("error. need cfs and cfs bin paths\n");
+    }
+    strncpy(cfs_bin, argv[1], 256);                          // where the binaries are, replace this to fit your needs
+    strncpy(cfs, argv[2], 256);                              // where the cfs is,       replace this to fit your needs
     signal(SIGINT, dummy);                                   // skip stop, ctrl+c
     signal(SIGTSTP, dummy);                                  // skip stop, ctrl+z
     SUOM    = 's';                                           // single user
