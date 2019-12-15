@@ -9,7 +9,7 @@
 #include <dirent.h>      // for listing dirs
 #include <locale.h>      // localization
 #include <stdlib.h>      // some other stuff
-#include <stringh.>      // strlen, strncpy, etc
+#include <string.h>      // strlen, strncpy, etc
 #include <unistd.h>      // for symlinks and s***
 #include <langinfo.h>    // language info
 #include <sys/statvfs.h> // filesystems
