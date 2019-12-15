@@ -36,12 +36,19 @@ int main(int argc, char* argv[]) {
         printf("error opening file 2 :(\n");                               // lol rip
         return 1;                                                          // fail
     }
+    int size;                                                              // size of file
+    fseek(fptr, NULL, SEEK_END);                                           // go to end of file
+    size = ftell(fptr);                                                    // check where we are and save
+    fseek(fptr, NULL, 0);                                                  // go back to start
+
     chr = fgetc(fptr);                                                     // get next character
-    while (chr != EOF) {
+    int cnt = 0;                                                           // counter for file read
+    while (cnt < size) {                                                   // read until file over
         fputc(chr, sndptr);                                                // write file
         chr = fgetc(fptr);                                                 // get next char
-        ctr++;                                                             // up counter
+        cnt++;                                                             // up counter
     }
+
     fclose(fptr);                                                          // close file
     fclose(sndptr);                                                        // close writing file
     remove(argv[1]);                                                       // bye
