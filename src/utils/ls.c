@@ -13,6 +13,7 @@ int main(int argc, char* argv[]) {
      sry
      */
     int ARG_A = 0;                                                         // if using -a
+    int ARG_B = 0;                                                         // if using -b
     int DIR_SPEC = 0;                                                      // if dir specified
     for (int i = 1; i < argc; i++) {
         /*
@@ -37,6 +38,7 @@ int main(int argc, char* argv[]) {
               if -b or --escape, print non graphic as octal escape
               stub
              */
+            ARG_B = 1;
         }
 
         else if (STRING_EQUAL_TO_STRING(argv[i], "--block-size=", 13)) {
@@ -112,10 +114,29 @@ int main(int argc, char* argv[]) {
                     continue;                                              // if not, continue
                 }
             }
-            printf("%s\n", EP->d_name);                                    // print directory / file name to stdout
+            if (ARG_B) {
+                for (int i = 0; i < strlen(EP->d_name); i++) {
+                    if ((EP->d_name[i] >= 32) && (EP->d_name[i] <= 254)) {
+                        /*
+                          if graphic character
+                         */
+                        printf("%c", EP->d_name[i]);                       // print graphic character
+                    }
+                    else {
+                        /*
+                          if not
+                         */
+                         printf("\\%o", EP->d_name[i]);                    // print character in octal
+                    }
+                }
+                printf("\n");
+            }
+            else {
+                printf("%s\n", EP->d_name);
+            };
         }
         closedir(DP);                                                      // close directory, as we are done.
-    }
+    };
     /*
      i removed an else statement, as it would also trigger if the directory was empty, if i can fix that with statvfs, i will. otherwise, :P.
      */
