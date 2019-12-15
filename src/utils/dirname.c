@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <libgen.h>
 #include <string.h>
 
 int main(int argc, char* argv[]) {
@@ -7,7 +8,6 @@ int main(int argc, char* argv[]) {
         printf("dirname: usage: dirname [PATH]\n");                        // no args specified.
         return 1;
     }
-    token = strtok(argv[1], "/");                                          // get token for argv[1]
-    printf("%s\n", token);                                                 // we done, print that stuff
+    printf("%s\n", dirname(argv[1]));
     return 0;
 }
