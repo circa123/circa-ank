@@ -12,7 +12,7 @@ int main(int argc, char* argv[]) {
         printf("basename: usage: basename [PATH]\n");                      // no args specified.
         return 1;
     }
-    token = strtok(argv[1], "/");                                          // get token for args[1]
+    token = strtok(argv[1], "/");                                          // get token for argv[1]
     char new_backup[256];                                                  // backup for token
     while (token != NULL) {
         for (int i = 0; i < 256; i++) {
