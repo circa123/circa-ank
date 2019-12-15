@@ -32,7 +32,7 @@ int REMOVE_DIR(char *PATH) {
     /*
      uses nftw to remove directories
      */
-    return nftw(PATH, UNLINK_FILES, 64, FTW_DEPTH | FTW_PHYS);
+    return nftw(PATH, UNLINK_FILES, 64, 8 | 1);
 }
 
 int STRING_EQUAL_TO_STRING(char input[], char cmp[], int len) {
