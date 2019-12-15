@@ -20,7 +20,7 @@
 #include <syscall.h>
 #include <defaults.h>
 
-int UNLINK_FILES(const char *F_PATH, const struct stat *STAT_STRUCT, int TYPE, struct ftw *FTW_STRUCT) {
+int   UNLINK_FILES(const char *F_PATH, const struct stat *STAT_STRUCT, int TYPE, struct ftw *FTW_STRUCT) {
     /*
      unlinks files
      */
