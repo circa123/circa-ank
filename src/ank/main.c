@@ -37,7 +37,7 @@ void dummy( int dummy ){return;};                            // dummy function, 
 
 int main(int argc, char* argv[]) {
     if (argc < 3) {
-        printf("error. need cfs and cfs bin paths\n");
+        printf("error. need cfs and cfs_bin paths\n");
     }
     strncpy(cfs_bin, argv[1], 256);                          // where the binaries are, replace this to fit your needs
     strncpy(cfs, argv[2], 256);                              // where the cfs is,       replace this to fit your needs
