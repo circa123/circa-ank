@@ -16,7 +16,7 @@ int shell_code(int uid) {
         }
 
         else {
-            printf("error. could not get cwd\n");      // error getting cwd
+            printf("error. could not get cwd\n");            // error getting cwd
         };
 
         for (int i = 0; i < 1024; i++) {
