@@ -31,6 +31,7 @@ int shell_code(int uid) {
             printf("error: could not execute\n", ERROR);     // print error message
         }
     };
+    return 0;
 }
 
 void dummy( int dummy ){return;};                            // dummy function, just returns
