@@ -23,7 +23,7 @@ int main(){
         execv("binaries/circa", argv_list);                                // actually exec the binary
         exit(0);                                                           // exit
     }
-    if (waitpid(pid, &status, 0) > 0) {                                    // wait for binary to exit
+    else if (waitpid(pid, &status, 0) > 0) {                               // wait for binary to exit
         if (WIFEXITED(status)) {                                           // if exited
             printf("halting circa\n");
             return 0;                                                      // return 0
