@@ -15,6 +15,7 @@ int main(int argc, char* argv[]) {
         printf("xxd: usage: xxd [FILE]\n");
         return 0;
     }
+
     FILE *fptr;                                                            // file pointer
     char chr;                                                              // char for printing
 

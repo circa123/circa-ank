@@ -25,15 +25,18 @@ int main(int argc, char* argv[]) {
      */
 
     fptr   = fopen(argv[1], "rb");                                         // open file, for reading
-    sndptr = fopen(argv[2], "wb");                                         // open file, for writing
+    sndptr = fopen(argv[2], "wb");
+                                          // open file, for writing
     if (fptr == NULL) {
         printf("error opening file 1 :(\n");                               // lol rip
         return 1;                                                          // fail
     }
+
     if (sndptr == NULL) {
         printf("error opening file 2 :(\n");                               // lol rip
         return 1;                                                          // fail
     }
+    
     int size;                                                              // size of file
     fseek(fptr, NULL, SEEK_END);                                           // go to end of file
     size = ftell(fptr);                                                    // check where we are and save
@@ -46,7 +49,7 @@ int main(int argc, char* argv[]) {
         chr = fgetc(fptr);                                                 // get next char
         cnt++;                                                             // up counter
     }
-    
+
     fclose(fptr);                                                          // close file
     fclose(sndptr);                                                        // close writing file
     return 0;                                                              // success

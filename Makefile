@@ -2,7 +2,7 @@
 # make / make ALL for making everything (except fs)
 # make init to compile init
 # make utils to make utilites
-# make fs to make fs
+# make fs to make cfs
 # make clean to clean up
 
 ALL:

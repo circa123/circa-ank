@@ -20,6 +20,7 @@ int main(int argc, char* argv[]) {
 
     long long free_space;                                                  // long, for free space
     free_space = (fs.f_bavail*4);                                          // set free space in kilobytes
+    
     printf("%s\n", INT_TO_FORMATTED_STRING(free_space*1024));              // printf free space
     return 0;                                                              // success
 }

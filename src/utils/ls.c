@@ -15,6 +15,7 @@ int main(int argc, char* argv[]) {
     int ARG_A = 0;                                                         // if using -a
     int ARG_B = 0;                                                         // if using -b
     int DIR_SPEC = 0;                                                      // if dir specified
+
     for (int i = 1; i < argc; i++) {
         /*
           for each argument, run this
@@ -90,14 +91,18 @@ int main(int argc, char* argv[]) {
             DIR_SPEC = 1;                                                  // if not an argument, set dir to yes
         };
     }
+
     DIR *DP;                                                               // dir object, for listing files inside of specific directory.
     struct dirent *EP;                                                     // dirent struct for actually getting the name of the files in the directory while listing them. my god i'm long winded
+
     if (!DIR_SPEC) {                                                       // if no arguments, just the command
         DP = opendir(".");                                                 // open current working directory (cwd / pwd)
     }
+
     else {                                                                 // if directory specified
         DP = opendir(argv[argc - 1]);                                      // open the first argument, i'm lazy so i'm not programming multiple lists at once atm, sry.
     }
+
     if (DP != NULL) {                                                      // if not empty and directory exists
         while ((EP = readdir(DP)) != NULL) {                               // set EP to next file to read, and check if done
             if (EP->d_name[0] == '.') {

@@ -10,6 +10,7 @@ int main(int argc, char* argv[]) {
         printf("ln: usage: ln [file] [file2]\n");
         return argc;
     }
+    
     printf("\n");                                                              // print a newline.
     return symlink(argv[1], argv[2]);                                          // create symlink called argv[2] pointing to argv[1]
 }

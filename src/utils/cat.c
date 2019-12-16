@@ -14,6 +14,7 @@ int main(int argc, char* argv[]) {
         FILE *fptr;                                                        // file pointer
         char chr;                                                          // char for printing
         fptr = fopen(argv[1], "r");                                        // open file, for reading
+        
         if (fptr == NULL) {
             printf("error. could not open file. :(\n");                    // lol rip
             return 1;                                                      // fail
@@ -39,6 +40,7 @@ int main(int argc, char* argv[]) {
             FILE *fptr;                                                    // file pointer
             char chr;                                                      // char for printing
             fptr = fopen(argv[i], "r");                                    // open file, for reading
+
             if (fptr == NULL) {
                 printf("error. could not open file. :(\n");                // lol rip
                 return 1;                                                  // fail
