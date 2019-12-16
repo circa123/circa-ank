@@ -71,12 +71,17 @@ int main(int argc, char* argv[]) {
              */
         }
 
-        else if (STRING_EQUAL_TO_STRING(argv[i], "-h", 2)) {
+        else if (STRING_EQUAL_TO_STRING(argv[i], "-h", 2) || STRING_EQUAL_TO_STRING(argv[i], "--help", 6)) {
             /*
               -h, for human readable sizes
               WORKING ON IT!!!
               stub
              */
+            printf("Circa Utilites\n\
+            ls\n\
+            ls -a path             - list all files, except . and ..\n\
+            ls -A path             - same as -a, but also lists . and ..\n\
+            ls -b path             - prints non graphic as octal escape\n")
         }
 
         else if (STRING_EQUAL_TO_STRING(argv[i], "-l", 2)) {
