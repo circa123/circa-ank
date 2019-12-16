@@ -5,10 +5,10 @@
 
 #include <stdio.h>
 
-int main() {
+int main(int argc, char* argv[]) {
     while (1) {
         printf("yes\n");                                                   // i f***ing hate yes
     }
-    
+
     return 0;                                                              // success
 }
