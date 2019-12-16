@@ -14,6 +14,7 @@ ALL:
 	make utils
 	gcc -o bin/circa src/ank/main.c src/utils/shell.c src/ank/syscall.c -I src/headers
 	echo done
+	
 init:
 	echo compiling init
 	gcc -o bin/init src/ank/init.c
