@@ -12,6 +12,7 @@
 #include <string.h>      // strlen, strncpy, etc
 #include <unistd.h>      // for symlinks and s***
 #include <langinfo.h>    // language info
+#include <sys/wait.h>
 #include <sys/statvfs.h> // filesystems
 
 // begin our own definitions
