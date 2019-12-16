@@ -87,7 +87,7 @@ char* INT_TO_FORMATTED_STRING(long long integer) {
 int SPAWN_PTR_WITH_UID_IF_PRIVILEGED(int (*ptr)(int uid), int uid) {
     /*
      spwuif
-     if uid passed == 0, spawn it
+     if uid passed == ADMIN_ID, spawn it
      */
     if (uid == ADMIN_ID) {
 
