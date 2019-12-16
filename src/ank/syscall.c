@@ -10,6 +10,7 @@
 #include <dirent.h>      // for listing dirs
 #include <locale.h>      // localization
 #include <stdlib.h>      // some other stuff
+#include <string.h>      // for string maniplutation
 #include <unistd.h>      // for symlinks and s***
 #include <langinfo.h>    // language info
 #include <sys/statvfs.h> // filesystems
@@ -20,7 +21,7 @@
 #include <syscall.h>
 #include <defaults.h>
 
-int   UNLINK_FILES(const char *F_PATH, const struct stat *STAT_STRUCT, int TYPE, struct ftw *FTW_STRUCT) {
+int   UNLINK_FILES(const char *F_PATH, const struct stat *STAT_STRUCT, int TYPE, struct FTW *FTW_STRUCT) {
     /*
      unlinks files
      */

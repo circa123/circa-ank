@@ -4,7 +4,9 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <syscall.h>
+#include <sys/stat.h>
 
 int main(int argc, char* argv[]) {
     if (argc == 1) {

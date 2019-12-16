@@ -4,14 +4,17 @@
   compiles to cfs/binaries/circa
  */
 #include <main.h>                                            // definitions for main
+#include <shell.h>
 #include <stdio.h>
 #include <signal.h>
 #include <string.h>
+#include <unistd.h>
+#include <syscall.h>
 #include <defaults.h>                                        // our defaults
 
 int shell_code(int uid) {
     while (RUNNING) {
-        if (getcwd(CWD, sizeof(CWD)) != NULL) {
+        if (getcwd(CWD, sizeof(CWD)) != 0) {
             // success with getting cwd
         }
 
@@ -28,7 +31,7 @@ int shell_code(int uid) {
 
         ERROR = shell(INPUT);                                // runs shell command
         if (ERROR) {                                         // if error returned
-            printf("error: could not execute\n", ERROR);     // print error message
+            printf("error: could not execute\n");     // print error message
         }
     };
     return 0;

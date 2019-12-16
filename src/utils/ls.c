@@ -5,6 +5,7 @@
 
 #include <stdio.h>
 #include <dirent.h>
+#include <string.h>
 #include <syscall.h>
 
 int main(int argc, char* argv[]) {
@@ -121,7 +122,7 @@ int main(int argc, char* argv[]) {
             }
             if (ARG_B) {
                 for (int i = 0; i < strlen(EP->d_name); i++) {
-                    if ((EP->d_name[i] >= 32) && (EP->d_name[i] <= 254)) {
+                    if ((EP->d_name[i] >= 32)) {
                         /*
                           if graphic character
                          */

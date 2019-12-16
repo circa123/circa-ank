@@ -4,6 +4,7 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <syscall.h>
 
 int main(int argc, char* argv[]) {
@@ -40,11 +41,11 @@ int main(int argc, char* argv[]) {
 
     chr = fgetc(fptr);                                                     // get next character
     int size;                                                              // size of file
-    fseek(fptr, NULL, SEEK_END);                                           // go to end of file
+    fseek(fptr, 0, SEEK_END);                                              // go to end of file
     size = ftell(fptr);                                                    // check where we are and save
-    fseek(fptr, NULL, 0);                                                  // go back to start
+    fseek(fptr, 0, 0);                                                     // go back to start
     int cnt = 0;
-    
+
     while ((cnt < size) && (another_counter < head_int)) {                 // read until file over or read all of the head bytes, whichever comes first
         printf("%c", chr);                                                 // print character
         chr = fgetc(fptr);                                                 // get next character

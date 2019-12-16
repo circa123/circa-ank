@@ -17,6 +17,7 @@
 // begin our own definitions
 #include <main.h>
 #include <shell.h>
+#include <syscall.h>
 #include <defaults.h>
 
 int shell(char input[1024]) {
