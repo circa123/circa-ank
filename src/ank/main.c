@@ -34,7 +34,7 @@ int shell_code(int uid) {
     return 0;
 }
 
-void dummy( int dummy ){return;};                            // dummy function, just returns
+void dummy( int dummy ){ return; };                          // dummy function, just returns
 
 int main(int argc, char* argv[]) {
     if (argc < 3) {
