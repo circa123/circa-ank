@@ -94,7 +94,7 @@ int SPAWN_PTR_WITH_UID_IF_PRIVILEGED(int (*ptr)(int uid), int uid) {
         (*ptr)(uid);                                                           // if admin uid, set in kernel, run ptr with uid
     }
     else {
-        return uid;                                                             // fail :(
+        return 1;                                                             // fail :(
     }
     return 0;                                                                  // success!
 }
