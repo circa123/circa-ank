@@ -1,29 +1,12 @@
 README
 
-What is circa?
-circa is an implementation of some of the basic UNIX commands and GNU Coreutils utilities, licensed under GPLv2.
+What is this?
+Circa + ANK are utilities meant to be used with a kernel such as Linux, HURD, or BSD.
+They are similar to GNU Coreutils, BusyBox, and similar packages.
 
-What is ANK?
-ANK (for ANK's Not a Kernel) is a collection of a few programs that attempt to go from just a kernel (Linux, Hurd, BSD, etc.), to a full, complete, system.
-ANK's source code is in src/ank/
-The headers for ANK and Circa TOGETHER are in src/headers/
-And Circa's source code is in src/utils/
+Build
+make && make fs
 
-What is the purpose of this?
-ANK is meant to be a simple way to execute one binary, and get a workable system.
-Circa is a collection of utilities that are meant to be used with ANK, but don't have to be.
-
-ANK "BOOT" PROCESS:
-cfs/init is executed
-cfs/init prints a startup message, and does whatever preparation necessary, then executes cfs/binaries/circa, and hands off control to the Circa shell.
-The Circa shell then does an FEC. (fetch execute cycle)
-
-Ok, so how do I build it?
-Just run 'make', then 'make fs'
-
-So how do I run it?
-Just run 'cfs/init', inside of the CFS folder.
-
-ALSO
-a commit from ra1n is a commit from James, and a commit from James is a commit from circa, and a commit from circa is a commit from circa123, and vice versa
-i (ra1n / James / Circa / Circa123) have 4 different git names. sry
+How do I use it?
+Read doc/ANK for info about ANK, and / or UTILS for details about Circa's shell.
+Otherwise, check the usage info printed when invoking a command.
