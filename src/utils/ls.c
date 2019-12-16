@@ -81,7 +81,8 @@ int main(int argc, char* argv[]) {
             ls\n\
             ls -a path             - list all files, except . and ..\n\
             ls -A path             - same as -a, but also lists . and ..\n\
-            ls -b path             - prints non graphic as octal escape\n")
+            ls -b path             - prints non graphic as octal escape\n");
+            return 1;
         }
 
         else if (STRING_EQUAL_TO_STRING(argv[i], "-l", 2)) {
