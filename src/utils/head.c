@@ -11,9 +11,11 @@ int main(int argc, char* argv[]) {
         printf("head: usage: head -c [bytes] [file]\n");
         return 0;
     }
+
     int head_int;                                                          // amount to read
     int counter;                                                           // argument counter
     int another_counter = 0;                                               // counter for char's read
+
     for (int i = 1; i < argc; i++) {                                       // for each argument in the array
         if (STRING_EQUAL_TO_STRING(argv[i], "-c", 2)) {                    // if argument is -c
             head_int = atoi(argv[i + 1]);                                  // set amount to read to next argument
@@ -21,10 +23,12 @@ int main(int argc, char* argv[]) {
             break;                                                         // success
         }
     }
+
     /*
      stealing more code from cat
      :D
      */
+
     FILE *fptr;                                                            // file pointer
     char chr;                                                              // char for reading
 
@@ -40,6 +44,7 @@ int main(int argc, char* argv[]) {
     size = ftell(fptr);                                                    // check where we are and save
     fseek(fptr, NULL, 0);                                                  // go back to start
     int cnt = 0;
+    
     while ((cnt < size) && (another_counter < head_int)) {                 // read until file over or read all of the head bytes, whichever comes first
         printf("%c", chr);                                                 // print character
         chr = fgetc(fptr);                                                 // get next character

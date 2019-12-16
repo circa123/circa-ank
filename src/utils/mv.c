@@ -12,6 +12,7 @@ int main(int argc, char* argv[]) {
     if (argc < 3) {
         printf("mv: usage: mv [FILE] [NEW_NAME]\ne.g. mv file new_file");
     }
+
     FILE *fptr;                                                            // file pointer
     FILE *sndptr;                                                          // second file pointer, for writing
     int ctr;                                                               // counter for reading
@@ -28,14 +29,17 @@ int main(int argc, char* argv[]) {
 
     fptr   = fopen(argv[1], "r");                                          // open file, for reading
     sndptr = fopen(argv[2], "w");                                          // open file, for writing
+
     if (fptr == NULL) {
         printf("error opening file 1 :(\n");                               // lol rip
         return 1;                                                          // fail
     }
+
     if (sndptr == NULL) {
         printf("error opening file 2 :(\n");                               // lol rip
         return 1;                                                          // fail
     }
+
     int size;                                                              // size of file
     fseek(fptr, NULL, SEEK_END);                                           // go to end of file
     size = ftell(fptr);                                                    // check where we are and save
