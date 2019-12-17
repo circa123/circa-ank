@@ -56,7 +56,7 @@ int main(int argc, char* argv[]) {
 
         while (token != NULL) {
             if (STRING_EQUAL_TO_STRING(token, "-n", 2)) {
-                break;
+                break;                                       // -n skips rest of arguments
             }
 
             token = strtok(NULL, " ");                       // get new token
