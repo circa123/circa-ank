@@ -47,7 +47,7 @@ int main(){
             BIN[i] = BINS[i - len];                                        // chuck on bins to end of bin
         }
 
-        char* K_ARGS = "-n";                                               // -n stops looking for args, and just continues
+        char* K_ARGS = "-n";                                               // -n stops looking for args, and just continues. see SPEC.TXT in docs for the documentation on the arguments you can use
 
         char *argv_list[] = {"", BIN, CWD, K_ARGS, NULL};                  // initialize argv list for the execution with "", to pad the code
         execv("binaries/circa", argv_list);                                // actually exec the binary
