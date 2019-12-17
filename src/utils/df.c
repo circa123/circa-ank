@@ -13,6 +13,7 @@ int main(int argc, char* argv[]) {
         printf("error: usage: df [MOUNTPOINT]\ne.g. df /\n");
         return argc;
     }
+    
     if (statvfs(argv[1], &fs) != 0) {
         printf("error opening path. :(\n");                                // lol rip
         return 1;                                                          // fail
@@ -20,7 +21,7 @@ int main(int argc, char* argv[]) {
 
     long long free_space;                                                  // long, for free space
     free_space = (fs.f_bavail*4);                                          // set free space in kilobytes
-    
+
     printf("%s\n", INT_TO_FORMATTED_STRING(free_space*1024));              // printf free space
     return 0;                                                              // success
 }
