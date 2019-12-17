@@ -184,14 +184,17 @@ int shell(char input[1024]) {
         if (pid == 0) {                                                        // if child process, run this code
             char *argv_list[] = {""};                                          // initialize argv list for the execution with "", to pad the code
             char a0[128];                                                      // binary path
+
             strncpy(a0, cfs_bin, 128);                                         // patches
             for (int i = 1; i < cnt; i++) {                                    // for each argument passed
                 argv_list[i] = args[i];                                        // add argument to end of argv_list
             }
+
             int len = strlen(a0);
             for (int i = len; i < len + strlen(args[0]); i++) {
                 a0[i] = args[0][i - len];                                      // copy command after binaries
             }
+
             argv_list[cnt] = NULL;                                             // because execv needs a NULL at the end
             execv(a0, argv_list);                                              // actually exec the binary
             exit(0);                                                           // exit
