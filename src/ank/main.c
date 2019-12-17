@@ -44,6 +44,26 @@ int main(int argc, char* argv[]) {
         printf("error. need cfs and cfs_bin paths\n");
     }
 
+    if (argc >= 4) {
+        /*
+          search through the argv for k_params
+          also yes, stolen from shell.c
+        */
+        token = strtok(argv[3], " ");                        // string split token
+
+        int cnt = 0;                                         // counter for loop
+        int len;                                             // strncpy len
+
+        while (token != NULL) {
+            if (STRING_EQUAL_TO_STRING(token, "-n", 2)) {
+                break;
+            }
+
+            token = strtok(NULL, " ");                       // get new token
+            cnt++;                                           // up counter
+        }
+    }
+
     strncpy(cfs_bin, argv[1], 256);                          // where the binaries are, replace this to fit your needs
     strncpy(cfs, argv[2], 256);                              // where the cfs is,       replace this to fit your needs
 
