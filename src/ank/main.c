@@ -44,6 +44,8 @@ int main(int argc, char* argv[]) {
         printf("error. need cfs and cfs_bin paths\n");
     }
 
+    int VERBOSE = 0;
+
     if (argc >= 4) {
         /*
           search through the argv for k_params
@@ -59,23 +61,44 @@ int main(int argc, char* argv[]) {
                 break;                                       // -n skips rest of arguments
             }
 
+            if (STRING_EQUAL_TO_STRING(token, "-v", 2)) {
+                VERBOSE = 1;                                 // -v goes full verbose
+            }
+
             token = strtok(NULL, " ");                       // get new token
             cnt++;                                           // up counter
         }
     }
 
+    if (VERBOSE) {
+        printf("{ANK} copying cfs_bin\n");
+    }
     strncpy(cfs_bin, argv[1], 256);                          // where the binaries are, replace this to fit your needs
+
+    if (VERBOSE) {
+        printf("{ANK} copying cfs\n");
+    }
     strncpy(cfs, argv[2], 256);                              // where the cfs is,       replace this to fit your needs
 
+    if (VERBOSE) {
+        printf("{ANK} setting up signals\n");
+    }
     signal(SIGINT, dummy);                                   // skip stop, ctrl+c
     signal(SIGTSTP, dummy);                                  // skip stop, ctrl+z
 
+    if (VERBOSE) {
+        printf("{ANK} settings defaults\n");
+    }
     SUOM    = 's';                                           // single user
     ADMIN_ID = 0;                                            // admin_id is 0, circa
     RUNNING  = 1;                                            // while running == 1, it's running
     VERSION  = "0.0.1.1a";                                   // version of circa
 
     printf("starting circa v%s\n", VERSION);                 // print startup message
+
+    if (VERBOSE) {
+        printf("{ANK} spawning ptr\n");
+    }
     SPAWN_PTR_WITH_UID_IF_PRIVILEGED(&shell_code, ADMIN_ID); // spawn shell_code, the code for FEC in circa
     return 0;
 };

@@ -8,3 +8,4 @@ char        CWD[1024];                        // cwd array
 int         ERROR;                            // returned int from the shell
 const char* VERSION;                          // version string
 int         RUNNING;                          // running int
+int         VERBOSE;                          // verbose mode
