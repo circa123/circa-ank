@@ -9,7 +9,10 @@
 int main(int argc, char* argv[]) {
     char* token;
     if (argc == 1) {
-        printf("basename: usage: basename [PATH]\n");                      // no args specified.
+        /*
+          no args specified.
+         */
+        printf("basename: return the file name of a path. \musage: basename [PATH]\n");
         return 1;
     }
 
@@ -23,7 +26,7 @@ int main(int argc, char* argv[]) {
         strncpy(new_backup, token, 256);                                   // copy token into new_backup
         token = strtok(NULL, "/");                                         // get next token
     }
-    
+
     printf("%s\n", new_backup);                                            // we done, print that stuff
     return 0;
 }
