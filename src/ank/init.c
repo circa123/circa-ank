@@ -32,7 +32,7 @@ int main(int argc, char* argv[]){
         strncpy(CWD, dirname(CWD), 256);
 
         char BIN[256];                                                     // binary path
-        char BINS[256] = "/binaries/circa";                                // just an array with /binaries/ in it
+        char BINS[256] = "/binaries/";                                     // just an array with /binaries/ in it
 
         strncpy(BIN, CWD, 256);                                            // put cwd in bin
         int len = strlen(BIN);                                             // get len for loop
@@ -41,10 +41,21 @@ int main(int argc, char* argv[]){
             BIN[i] = BINS[i - len];                                        // chuck on bins to end of bin
         }
 
+        char BIN2[128];                                                    // actual binary to execute
+        char CIRCA[128] = "circa";                                         // just array with "circa" in it
+        strncpy(BIN2, BIN, 128);                                           // copy BIN2 path to BIN
+        len = strlen(BIN);                                                 // get strlen of array, for copying
+        for (int i = len; i < len + strlen(CIRCA); i++) {
+            /*
+              copy circa into array
+            */
+            BIN2[i] = CIRCA[i - len];
+        }
+
         char* K_ARGS = "-n";                                               // -n stops looking for args, and just continues. see SPEC.TXT in docs for the documentation on the arguments you can use
 
         char *argv_list[] = {"", BIN, CWD, K_ARGS, NULL};                  // initialize argv list for the execution with "", to pad the code
-        execv(BIN, argv_list);                                             // actually exec the binary
+        execv(BIN2, argv_list);                                            // actually exec the binary
         exit(0);                                                           // exit
     }
 
