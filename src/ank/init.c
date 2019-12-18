@@ -37,7 +37,7 @@ int main(){
         }
 
         char BIN[256];                                                     // binary path
-        char BINS[256] = "/binaries/";                                     // just an array with binaries/ in it
+        char BINS[256] = "/binaries/";                                     // just an array with /binaries/ in it
 
         strncpy(BIN, CWD, 256);                                            // put cwd in bin
         BIN[strlen(BIN)] = '/';                                            // for fix
