@@ -5,6 +5,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <syscall.h>
 
 int main(int argc, char* argv[]) {
@@ -31,13 +32,13 @@ int main(int argc, char* argv[]) {
 
     for (int i = 1; i < argc; i++) {                                       // for each argument in the array
         if (STRING_EQUAL_TO_STRING(argv[i], "-c", 2)) {                    // if argument is -c
-            if (argv[i + 1] == '+') {
+            if (argv[i][0] == '+') {
                 char* str;                                                 // str to copy to
                 for (int i = 1; i < strlen(argv[i + 1]); i++) {
                     /*
                       copy stuff
                     */
-                    str[i - 1] = argv[i];
+                    str[i - 1] = *argv[i];
                 }
                 tail_int = atoi(str);
                 FLIP = 1;

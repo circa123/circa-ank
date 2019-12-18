@@ -12,7 +12,7 @@ int main(int argc, char* argv[]) {
         /*
           no args specified.
          */
-        printf("basename: return the file name of a path. \musage: basename [PATH]\n");
+        printf("basename: return the file name of a path. \nusage: basename [PATH]\n");
         return 1;
     }
 

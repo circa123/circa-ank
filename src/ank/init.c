@@ -37,13 +37,13 @@ int main(){
         }
 
         char BIN[256];                                                     // binary path
-        char BINS[256] = "binaries/";                                      // just an array with binaries/ in it
+        char BINS[256] = "/binaries/";                                     // just an array with binaries/ in it
 
         strncpy(BIN, CWD, 256);                                            // put cwd in bin
         BIN[strlen(BIN)] = '/';                                            // for fix
         int len = strlen(BIN);                                             // get len for loop
 
-        for (int i = len; i < len + strlen("binaries/"); i++) {
+        for (int i = len; i < len + strlen(BINS); i++) {
             BIN[i] = BINS[i - len];                                        // chuck on bins to end of bin
         }
 
