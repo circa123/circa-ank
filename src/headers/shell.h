@@ -1,6 +1,6 @@
 /*
   shell.h
-  circa v0.0.1.1a
+  circa v0.0.2
  */
 
 int shell(char input[1024]);       // shell command

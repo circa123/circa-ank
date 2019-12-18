@@ -1,5 +1,5 @@
 /*
-  ank v0.0.1.1a
+  ank v0.0.2
   init.c
   compiles to cfs/init
  */

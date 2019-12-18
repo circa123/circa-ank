@@ -1,4 +1,4 @@
-MAIN.C - ANK v0.0.1.1a
+MAIN.C - ANK v0.0.2
 
 main.c's main() function is the first thing started by circa / ank, and currently has the following code:
 

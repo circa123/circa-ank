@@ -1,6 +1,6 @@
 /*
   defaults.h
-  circa v0.0.1.1a
+  circa v0.0.2
  */
 
 char  cfs[256];     // char* with full path to cfs directory

@@ -1,6 +1,6 @@
 /*
   rm
-  circa v0.0.1.1a
+  circa v0.0.2
  */
 
 #include <stdio.h>
@@ -27,6 +27,6 @@ int main(int argc, char *argv[]) {
     else {
         return 1;                                                          // not a file or directory, so fail.
     }
-    
+
     return 0;                                                              // success
 };

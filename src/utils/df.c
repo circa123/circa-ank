@@ -1,6 +1,6 @@
 /*
   df
-  circa v0.0.1.1a
+  circa v0.0.2
  */
 
 #include <stdio.h>
@@ -13,7 +13,7 @@ int main(int argc, char* argv[]) {
         printf("error: usage: df [MOUNTPOINT]\ne.g. df /\n");
         return argc;
     }
-    
+
     if (statvfs(argv[1], &fs) != 0) {
         printf("error opening path. :(\n");                                // lol rip
         return 1;                                                          // fail

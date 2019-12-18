@@ -1,6 +1,6 @@
 /*
   syscall.h
-  ank v0.0.1.1a
+  ank v0.0.2
  */
 
 int   REMOVE_DIR(char *PATH);                                                                             // remove dir with path

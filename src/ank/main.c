@@ -1,5 +1,5 @@
 /*
-  ank v0.0.1.1a
+  ank v0.0.2
   main.c
   compiles to cfs/binaries/circa
  */
@@ -92,7 +92,7 @@ int main(int argc, char* argv[]) {
     SUOM    = 's';                                           // single user
     ADMIN_ID = 0;                                            // admin_id is 0, circa
     RUNNING  = 1;                                            // while running == 1, it's running
-    VERSION  = "0.0.1.1a";                                   // version of circa
+    VERSION  = "0.0.2";                                      // version of circa
 
     printf("starting circa v%s\n", VERSION);                 // print startup message
 

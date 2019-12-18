@@ -1,4 +1,4 @@
-SHELL - circa 0.0.1.1a
+SHELL - circa 0.0.2
 
 shell usage, and commands
 

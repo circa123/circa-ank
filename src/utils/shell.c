@@ -1,7 +1,7 @@
 /*
   shell.c
   piping not a thing yet. sry
-  circa v0.0.1.1a
+  circa v0.0.2
  */
 
 #include <ftw.h>         // for rm

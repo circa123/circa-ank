@@ -1,4 +1,4 @@
-INIT.C - ANK v0.0.1.1a
+INIT.C - ANK v0.0.2
 
 VARIABLES
 int CHILD = 0;                      // just to make code a little nicer
