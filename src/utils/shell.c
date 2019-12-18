@@ -195,6 +195,21 @@ int shell(char input[1024]) {
                 a0[i] = args[0][i - len];                                      // copy command after binaries
             }
 
+            if (access(a0, F_OK) != -1) {
+                // if the file exists
+            }
+
+            else {
+                /*
+                  if doesn't exist, tries /bin/ instead
+                */
+                strncpy(a0, "/bin/", 128);                                     // patches
+                int len = strlen(a0);
+                for (int i = len; i < len + strlen(args[0]); i++) {
+                    a0[i] = args[0][i - len];                                  // copy command after binaries
+                }
+            }
+
             argv_list[cnt] = NULL;                                             // because execv needs a NULL at the end
             execv(a0, argv_list);                                              // actually exec the binary
             exit(0);                                                           // exit
