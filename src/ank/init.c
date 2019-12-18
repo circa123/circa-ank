@@ -42,7 +42,6 @@ int main(int argc, char* argv[]){
         }
 
         char* K_ARGS = "-n";                                               // -n stops looking for args, and just continues. see SPEC.TXT in docs for the documentation on the arguments you can use
-        printf("%s\n", BIN);
 
         char *argv_list[] = {"", BIN, CWD, K_ARGS, NULL};                  // initialize argv list for the execution with "", to pad the code
         execv(BIN, argv_list);                                             // actually exec the binary
