@@ -69,5 +69,10 @@ SPAWN_PTR_WITH_UID_IF_PRIVILEGED
 UNAME
 
 
+ANK ARGS
+REQUIRED:
+-n                          - skips rest of arguments
+-v                          - verbose mode
+
 IMPLEMENTATIONS
-usernames are assumed to be 64 characters. period. 
+usernames are assumed to be 64 characters. period.

@@ -15,7 +15,7 @@ int main(){
      stole fork + exec code from shell.c
      */
 
-    printf("{ank} init\nTHIS PROGRAM COMES WITH ABSOLUTELY NO WARRANTY, SEE LICENSE TEXT FOR DETAILS.\nYOU JUST GOT 360 NO-SCOPED\n"); // 1000% LEGIT ACCURRATE STARTUP MSG
+    printf("{ank} init\nTHIS PROGRAM COMES WITH ABSOLUTELY NO WARRANTY, SEE LICENSE TEXT FOR DETAILS.\n"); // print startup message
 
     int CHILD = 0;
     int status;                                                            // for waitpid
@@ -25,6 +25,7 @@ int main(){
         /*
         if child process
          */
+
         char CWD[256];
         if (getcwd(CWD, sizeof(CWD)) != NULL) {
             // success with getting cwd
@@ -46,14 +47,19 @@ int main(){
             BIN[i] = BINS[i - len];                                        // chuck on bins to end of bin
         }
 
-        char *argv_list[] = {"", BIN, CWD, NULL};                          // initialize argv list for the execution with "", to pad the code
+        char* K_ARGS = "-n";                                               // -n stops looking for args, and just continues. see SPEC.TXT in docs for the documentation on the arguments you can use
+
+        char *argv_list[] = {"", BIN, CWD, K_ARGS, NULL};                  // initialize argv list for the execution with "", to pad the code
         execv("binaries/circa", argv_list);                                // actually exec the binary
         exit(0);                                                           // exit
     }
 
-    else if (waitpid(pid, &status, 0) > 0) {                               // wait for binary to exit
+    else if (waitpid(pid, &status, 0) > 0) {
+        /*
+          wait for binary to exit
+        */
         if (WIFEXITED(status)) {                                           // if exited
-            printf("halting circa\n");
+            printf("halting ank\n");
             return 0;                                                      // return 0
         }
     }

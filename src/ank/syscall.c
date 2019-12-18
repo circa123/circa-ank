@@ -54,6 +54,12 @@ int STRING_EQUAL_TO_STRING(char input[], char cmp[], int len) {
 };
 
 char* INT_TO_FORMATTED_STRING(long long integer) {
+    /*
+      to do!
+      someone please implement decimal points
+      who the hell am i kidding
+      that person will be me.
+     */
     static char returnChar[64];                                                // returned char array
     int itc;                                                                   // int to convert to char array
     char chrToAdd[3];                                                          // char to add to string
