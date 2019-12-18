@@ -12,8 +12,8 @@ int main() {
     /*
      basic *ss date command
      */
-    time_t    TIME = time(NULL);                                                       // time_t, gives us the time
-    struct tm tm = *localtime(&TIME);                                                  // get time struct for date command
+    time_t     TIME = time(NULL);                                                       // time_t, gives us the time
+    struct tm  tm = *localtime(&TIME);                                                  // get time struct for date command
     char*      TIME_STRING;                                                            // string holding time
     setlocale(LC_ALL, "");                                                             // set the locale
     strftime(TIME_STRING, 256, "%a %d %b %Y %r %Z", &tm);                              // format date
