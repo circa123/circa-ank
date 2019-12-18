@@ -208,6 +208,35 @@ int shell(char input[1024]) {
                 for (int i = len; i < len + strlen(args[0]); i++) {
                     a0[i] = args[0][i - len];                                  // copy command after binaries
                 }
+                if (access(a0, F_OK) != -1) {
+                    // file exists, still
+                }
+                else {
+                    /*
+                      if /bin/ doesn't work, tries /usr/bin
+                    */
+                    strncpy(a0, "/usr/bin/", 128);                              // patches
+                    int len = strlen(a0);
+                    for (int i = len; i < len + strlen(args[0]); i++) {
+                        a0[i] = args[0][i - len];                               // copy command after binaries
+                    }
+                    if (access(a0, F_OK) != -1) {
+                        // file exists, still
+                    }
+                    else {
+                        strncpy(a0, "/sbin/", 128);                             // patches
+                        int len = strlen(a0);
+                        for (int i = len; i < len + strlen(args[0]); i++) {
+                            a0[i] = args[0][i - len];                           // copy command after binaries
+                        }
+                        if (access(a0, F_OK) != -1) {
+                            // file exists, still
+                        }
+                        else {
+                            return -1;
+                        }
+                    }
+                }
             }
 
             argv_list[cnt] = NULL;                                             // because execv needs a NULL at the end
