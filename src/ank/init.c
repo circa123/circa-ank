@@ -5,12 +5,13 @@
  */
 
 #include <stdio.h>
+#include <libgen.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
 #include <sys/wait.h>
 
-int main(){
+int main(int argc, char* argv[]){
     /*
      stole fork + exec code from shell.c
      */
@@ -27,20 +28,13 @@ int main(){
          */
 
         char CWD[256];
-        if (getcwd(CWD, sizeof(CWD)) != NULL) {
-            // success with getting cwd
-        }
-
-        else {
-            printf("error getting cwd. :(\n");
-            exit(0);
-        }
+        realpath(argv[0], CWD);
+        strncpy(CWD, dirname(CWD), 256);
 
         char BIN[256];                                                     // binary path
-        char BINS[256] = "/binaries/";                                     // just an array with /binaries/ in it
+        char BINS[256] = "/binaries/circa";                                // just an array with /binaries/ in it
 
         strncpy(BIN, CWD, 256);                                            // put cwd in bin
-        BIN[strlen(BIN)] = '/';                                            // for fix
         int len = strlen(BIN);                                             // get len for loop
 
         for (int i = len; i < len + strlen(BINS); i++) {
@@ -48,9 +42,10 @@ int main(){
         }
 
         char* K_ARGS = "-n";                                               // -n stops looking for args, and just continues. see SPEC.TXT in docs for the documentation on the arguments you can use
+        printf("%s\n", BIN);
 
         char *argv_list[] = {"", BIN, CWD, K_ARGS, NULL};                  // initialize argv list for the execution with "", to pad the code
-        execv("binaries/circa", argv_list);                                // actually exec the binary
+        execv(BIN, argv_list);                                             // actually exec the binary
         exit(0);                                                           // exit
     }
 
