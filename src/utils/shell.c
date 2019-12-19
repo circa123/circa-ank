@@ -133,7 +133,7 @@ int shell(char input[1024]) {
     }
 
     else if (STRING_EQUAL_TO_STRING(args[0], "uname", 5)) {
-        printf("circa v%s\n", VERSION);                                        // print name and version of circa
+        ANK_UNAME();
         return 0;                                                              // success
     }
 

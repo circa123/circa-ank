@@ -87,12 +87,12 @@ int main(int argc, char* argv[]) {
     signal(SIGTSTP, dummy);                                  // skip stop, ctrl+z
 
     if (VERBOSE) {
-        printf("{ANK} settings defaults\n");
+        printf("{ANK} setting defaults\n");
     }
     SUOM    = 's';                                           // single user
     ADMIN_ID = 0;                                            // admin_id is 0, circa
     RUNNING  = 1;                                            // while running == 1, it's running
-    VERSION  = "0.0.2";                                      // version of circa
+    VERSION  = "0.0.2dev";                                   // version of circa
 
     printf("starting circa v%s\n", VERSION);                 // print startup message
 

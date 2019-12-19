@@ -24,7 +24,7 @@ int main(int argc, char* argv[]){
 
     if (pid == CHILD) {
         /*
-        if child process
+         if child process
          */
 
         char CWD[256];
@@ -64,7 +64,7 @@ int main(int argc, char* argv[]){
           wait for binary to exit
         */
         if (WIFEXITED(status)) {                                           // if exited
-            printf("halting ank\n");
+            printf("{ank} halted\n");
             return 0;                                                      // return 0
         }
     }

@@ -65,23 +65,23 @@ char* INT_TO_FORMATTED_STRING(long long integer) {
     char chrToAdd[3];                                                          // char to add to string
     if (integer < 1024) {
         itc = integer;                                                         // set int to number, as it's under 1K, so bytes
-        strcpy(chrToAdd, "B");                                                 // copy size specifier
+        strncpy(chrToAdd, "B", 1);                                             // copy size specifier
     }
     else if (integer < 1048576) {
         itc = integer / 1024;                                                  // set int to number / 1024, as it's under 1MB, so kilobytes
-        strcpy(chrToAdd, "KB");                                                // copy size specifier
+        strncpy(chrToAdd, "KB", 2);                                            // copy size specifier
     }
     else if (integer < 1073741824) {
         itc = integer / 1048576;                                               // set int to number / 1048576, as it's under 1GB, so megabytes
-        strcpy(chrToAdd, "MB");                                                // copy size specifier
+        strncpy(chrToAdd, "MB", 2);                                            // copy size specifier
     }
     else if (integer < 1099511627776) {
         itc = integer / 1073741824;                                            // set int to number / 2**30, as it's under 1TB, so gigabytes
-        strcpy(chrToAdd, "GB");                                                // copy size specifier
+        strncpy(chrToAdd, "GB", 2);                                            // copy size specifier
     }
     else {
         itc = integer / 1099511627776;                                         // set int to number / 2**40, as it's under 1EB, so terabytes
-        strcpy(chrToAdd, "TB");                                                // copy size specifier
+        strncpy(chrToAdd, "TB", 2);                                            // copy size specifier
     }
     sprintf(returnChar, "%i", itc);                                            // put integer in char array
     int offset = strlen(returnChar);                                           // offset for the string to be added
@@ -106,8 +106,7 @@ int SPAWN_PTR_WITH_UID_IF_PRIVILEGED(int (*ptr)(int uid), int uid) {
     return 0;                                                                  // success!
 }
 
-char* UNAME() {
-    char* ret_val;                                                             // returned char*
-    sprintf(ret_val, "ANK v%s", VERSION);                                      // format version
-    return ret_val;                                                            // return char*
+int ANK_UNAME() {
+    printf("ANK v%s\n", VERSION);                                              // format version
+    return 0;
 }
