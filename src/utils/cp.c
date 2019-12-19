@@ -17,7 +17,7 @@ int main(int argc, char* argv[]) {
     char chr;                                                              // char for reading
 
     /*
-     debugging
+      debugging
     for (int i = 0; i < strlen(args[2]); i++) {
         printf("%x", args[2][i]);
     };

@@ -44,7 +44,7 @@ int main(int argc, char* argv[]) {
         printf("error. need cfs and cfs_bin paths\n");
     }
 
-    int VERBOSE = 0;
+    int VERBOSE = 0;                                         // if verbose, for argv
 
     if (argc >= 4) {
         /*
