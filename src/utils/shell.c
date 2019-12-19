@@ -21,6 +21,8 @@
 #include <syscall.h>
 #include <defaults.h>
 
+char* paths[] = {"/bin/", "/sbin/", "/usr/bin", "/usr/sbin", "/usr/local/bin", NULL}; // paths
+
 int shell(char input[1024]) {
     /*
      take shell input,
@@ -201,42 +203,24 @@ int shell(char input[1024]) {
 
             else {
                 /*
-                  if doesn't exist, tries /bin/ instead
+                  if doesn't exist, tries each path instead
                 */
-                strncpy(a0, "/bin/", 128);                                     // patches
-                int len = strlen(a0);
-                for (int i = len; i < len + strlen(args[0]); i++) {
-                    a0[i] = args[0][i - len];                                  // copy command after binaries
-                }
-                if (access(a0, F_OK) != -1) {
-                    // file exists, still
-                }
-                else {
-                    /*
-                      if /bin/ doesn't work, tries /usr/bin
-                    */
-                    strncpy(a0, "/usr/bin/", 128);                              // patches
+                int i = 0;
+                while (paths[i] != NULL) {
+                    strncpy(a0, "/bin/", 128);                                     // patches
                     int len = strlen(a0);
                     for (int i = len; i < len + strlen(args[0]); i++) {
-                        a0[i] = args[0][i - len];                               // copy command after binaries
+                        a0[i] = args[0][i - len];                                  // copy command after binaries
                     }
                     if (access(a0, F_OK) != -1) {
-                        // file exists, still
+                        /*
+                          if exists
+                        */
+                        i = 0;
+                        break;
                     }
-                    else {
-                        strncpy(a0, "/sbin/", 128);                             // patches
-                        int len = strlen(a0);
-                        for (int i = len; i < len + strlen(args[0]); i++) {
-                            a0[i] = args[0][i - len];                           // copy command after binaries
-                        }
-                        if (access(a0, F_OK) != -1) {
-                            // file exists, still
-                        }
-                        else {
-                            return -1;
-                        }
-                    }
-                }
+                    i++;
+                };
             }
 
             argv_list[cnt] = NULL;                                             // because execv needs a NULL at the end
