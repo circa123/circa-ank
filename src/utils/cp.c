@@ -25,8 +25,8 @@ int main(int argc, char* argv[]) {
      */
 
     fptr   = fopen(argv[1], "rb");                                         // open file, for reading
-    sndptr = fopen(argv[2], "wb");
-                                          // open file, for writing
+    sndptr = fopen(argv[2], "wb");                                         // open file, for writing
+
     if (fptr == NULL) {
         printf("error opening file 1 :(\n");                               // lol rip
         return 1;                                                          // fail

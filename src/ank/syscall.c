@@ -61,31 +61,44 @@ char* INT_TO_FORMATTED_STRING(long long integer) {
       that person will be me.
      */
     static char returnChar[64];                                                // returned char array
+    static char decChar[64];                                                   // decimal array
     int itc;                                                                   // int to convert to char array
+    int dec;                                                                   // decimal
     char chrToAdd[3];                                                          // char to add to string
     if (integer < 1024) {
         itc = integer;                                                         // set int to number, as it's under 1K, so bytes
+        dec = 0;
         strncpy(chrToAdd, "B", 1);                                             // copy size specifier
     }
     else if (integer < 1048576) {
         itc = integer / 1024;                                                  // set int to number / 1024, as it's under 1MB, so kilobytes
+        dec = integer / 102;
         strncpy(chrToAdd, "KB", 2);                                            // copy size specifier
     }
     else if (integer < 1073741824) {
         itc = integer / 1048576;                                               // set int to number / 1048576, as it's under 1GB, so megabytes
+        dec = integer / 104857;
         strncpy(chrToAdd, "MB", 2);                                            // copy size specifier
     }
     else if (integer < 1099511627776) {
         itc = integer / 1073741824;                                            // set int to number / 2**30, as it's under 1TB, so gigabytes
+        dec = integer / 107374182;
         strncpy(chrToAdd, "GB", 2);                                            // copy size specifier
     }
     else {
         itc = integer / 1099511627776;                                         // set int to number / 2**40, as it's under 1EB, so terabytes
+        dec = integer / 109951162777;
         strncpy(chrToAdd, "TB", 2);                                            // copy size specifier
     }
-    sprintf(returnChar, "%i", itc);                                            // put integer in char array
+    if (dec == 0) {
+        sprintf(returnChar, "%i", itc);                                        // put integer in char array
+    }
+    else {
+        sprintf(decChar, "%i", dec);                                           // put integer in decChar
+        sprintf(returnChar, "%i.%c", itc, decChar[strlen(decChar) - 1]);       // put integer and decimal in char array
+    }
     int offset = strlen(returnChar);                                           // offset for the string to be added
-    for (int i = strlen(returnChar); i < strlen(returnChar)+2; i++) {          // for the characters
+    for (int i = offset; i < offset+2; i++) {                                  // for the characters
         returnChar[i] = chrToAdd[i - offset];                                  // set last characters
     };
     return returnChar;                                                         // return char*
