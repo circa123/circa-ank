@@ -19,7 +19,7 @@ int main(int argc, char* argv[]) {
 
     for (int i = 1; i < argc; i++) {                                       // for each argument in the array
         if (STRING_EQUAL_TO_STRING(argv[i], "-c", 2)) {                    // if argument is -c
-            if (atoi[argv[i+1]] < 0) {
+            if (atoi(argv[i + 1]) < 0) {
                 /*
                   if to read nothing, just exit
                 */
