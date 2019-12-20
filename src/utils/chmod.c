@@ -20,6 +20,7 @@ int main(int argc, char *argv[]) {
         /*
           if permission higher than possible, exit.
         */
+        printf("error. need proper permission. \n");
         return -1;
     }
 
