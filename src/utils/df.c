@@ -15,7 +15,7 @@ int main(int argc, char* argv[]) {
     }
 
     if (statvfs(argv[1], &fs) != 0) {
-        printf("error opening path. :(\n");                                // lol rip
+        printf("error. could not open path. :()\n");                           // lol rip
         return 1;                                                          // fail
     }
 
