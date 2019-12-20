@@ -16,6 +16,13 @@ int main(int argc, char *argv[]) {
         return argc;                                          // return argument count
     }
 
+    if (atoi(argv[1]) > 4095) {
+        /*
+          if permission higher than possible, exit.
+        */
+        return -1;
+    }
+
     else {
         return chmod(argv[2], strtol(argv[1], NULL, 8));      // otherwise, chmod first argument [argv[1]], with permissions [argv[2]]
     };

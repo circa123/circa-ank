@@ -46,13 +46,13 @@ int main(int argc, char* argv[]) {
                 return 1;                                                  // fail
             }
 
-            int size;                                                          // size of file
-            fseek(fptr, 0, SEEK_END);                                          // go to end of file
-            size = ftell(fptr);                                                // check where we are and save
-            fseek(fptr, 0, 0);                                                 // go back to start
+            int size;                                                      // size of file
+            fseek(fptr, 0, SEEK_END);                                      // go to end of file
+            size = ftell(fptr);                                            // check where we are and save
+            fseek(fptr, 0, 0);                                             // go back to start
 
-            chr = fgetc(fptr);                                                 // get next character
-            int cnt = 0;                                                       // counter for file read            chr = fgetc(fptr);                                             // get next character
+            chr = fgetc(fptr);                                             // get next character
+            int cnt = 0;                                                   // counter for file read
             while (cnt < size) {                                           // read until file over
                 printf("%c", chr);                                         // print character
                 chr = fgetc(fptr);                                         // get next character
