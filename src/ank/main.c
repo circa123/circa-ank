@@ -94,7 +94,8 @@ int main(int argc, char* argv[]) {
     RUNNING  = 1;                                            // while running == 1, it's running
     VERSION  = "0.0.2dev";                                   // version of circa
 
-    printf("starting circa v%s\n", VERSION);                 // print startup message
+    printf("starting ");                                     // start of print
+    ANK_UNAME();                                             // print uname
 
     if (VERBOSE) {
         printf("{ANK} spawning ptr\n");
