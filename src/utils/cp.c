@@ -37,7 +37,7 @@ int main(int argc, char* argv[]) {
         return 1;                                                          // fail
     }
 
-    int size;                                                              // size of file
+    unsigned long size;                                                    // size of file, thx @zancarius
     fseek(fptr, 0, SEEK_END);                                              // go to end of file
     size = ftell(fptr);                                                    // check where we are and save
     fseek(fptr, 0, 0);                                                     // go back to start
